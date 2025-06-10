@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<h2>Bandeja De Entrada</h2>
+
+{% if mensajes %}
+<ul>
+    {% for mensaje in mensajes %}
+    <li>
+        <strong>De:</strong>{{mensaje.remitente.username}}<br>
+        <strong>Fecha:</strong>{{mensaje.fecha_envio|date:"d/m/Y H:i" }}<br>
+    </li>
+    </hr>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No Tienes Mensajes</p>
+{% endif %}
+
+<a href="{% url 'enviar_mensaje' %}">Enviar Un Mensaje</a>
+
+{% endblock %}

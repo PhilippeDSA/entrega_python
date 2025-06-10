@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block title %} Lista Articulo {% endblock %}
+{% block content %}
+<h2>Lista de Artículos</h2>
+<ul>
+  {%for articulo in articulos%}
+  <li>{{ articulo.nombre }} - {{ articulo.autor.nombre }} -{{articulo.categoria.nombre}}</li>
+  {% empty %}
+  <li> No se encontraron articulos</li>
+  {%endfor%}
+</ul>
+{% endblock %}

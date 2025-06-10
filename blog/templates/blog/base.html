@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="keywords" content="blog, articulos">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{% block title %}Mi Blog {% endblock %}</title>
+   <meta name="description" content="Blog Personal de Articulos sobre diversos temas">
+   <meta name="author" content="Philippe">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+
+</head>
+
+<body>
+   <h1>Blog</h1>
+   <nav>
+      <div class="logo">Mi Blog</div>
+      <ul>
+         <li><a href="{% url 'home' %}">Inicio</a></li>
+         <li><a href="{% url 'crear_articulo' %}">Crear Articulo</a></li>
+         <li><a href="{% url 'buscar_articulo' %}">Buscar Articulos</a></li>
+         <li><a href="{% url 'lista_articulos' %}">Lista De Articulos</a></li>
+         <li><a href="{% url 'enviar_mensaje' %}">Enviar Mensaje</a></li>
+         <li><a href="{% url 'bandeja_entrada' %}">Bandeja De Entrada</a></li>
+      </ul>
+
+
+   </nav>
+
+   <main>
+      {% block content %}{% endblock %}
+   </main>
+</body>
+<footer>
+   <p>&copy; 2025 - Blog Creado por Philippe De Souza Araujo</p>
+</footer>
+
+</html>

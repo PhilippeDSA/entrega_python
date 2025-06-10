@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block title %}Buscar Articulo {% endblock %}
+{% block content %}
+<h2>Buscar Articulo</h2>
+<form method="get" role="search" aria-label="Buscar Articulos">
+     <label for="search-query">Buscar Por Titulo o Autor:</label>
+     <input id="search-query" type="text" name="q" value="{{query|default:'' }}" />
+     <button type="submit"> Buscar</button>
+</form>
+<ul>
+     {%for articulo in resultados%}
+     <li>{{ articulo.nombre }} - {{ articulo.autor.nombre }} - {{articulo.categoria.nombre}}</li>
+     {% empty %}
+     <li> No se encontraron articulos</li>
+     {% endfor %}
+</ul>
+{% endblock %}
