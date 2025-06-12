@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% block content%}
+<article>
+    <h1> {{page.titulo}} </h1>
+    <div>
+        {{page.contenido|truncatechars:150}}
+        <p><strong> {{ page.slug }} </strong></p>
+    </div>
+    <p><a href="{% url 'pages_list'%}">Volver a Lista de Posts</a></p>
+</article>
+{% endblock %}

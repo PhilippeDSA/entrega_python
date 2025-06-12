@@ -3,15 +3,15 @@
 <h2>Bandeja De Entrada</h2>
 
 {% if mensajes %}
-<ul>
-    {% for mensaje in mensajes %}
-    <li>
-        <strong>De:</strong>{{mensaje.remitente.username}}<br>
-        <strong>Fecha:</strong>{{mensaje.fecha_envio|date:"d/m/Y H:i" }}<br>
-    </li>
-    </hr>
-    {% endfor %}
-</ul>
+
+{% for mensaje in mensajes %}
+<div>
+    <strong>De:</strong>{{mensaje.remitente.username}}<br>
+    <strong>Fecha:</strong>{{mensaje.fecha|date:"d/m/Y H:i" }}<br>
+    <strong>Contenido:</strong>{{ mensaje.contenido }}
+</div>
+{% endfor %}
+
 {% else %}
 <p>No Tienes Mensajes</p>
 {% endif %}

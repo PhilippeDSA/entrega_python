@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<h2> {% if form.instance.pk %}Editar{%else%}Crear{% endif %}Página </h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <a href="{% url 'pages_create' %}">Crear Nueva Página</a>
+    <button type="submit" class="btn btn-success">Guardar</button>
+</form>
+<a href="{% url 'pages_list'%}">Volver a la lista de Páginas</a>
+{%endblock%}

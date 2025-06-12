@@ -1,6 +1,7 @@
 from django import forms
-from .models import Autor, Categoria, Articulo
+from .models import Autor, Categoria, Articulo, Profile, User
 from .models import Mensaje
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 
 
 class AutorForm(forms.ModelForm):
@@ -33,3 +34,20 @@ class MensajeForm(forms.ModelForm):
         widgets = {
             'contenido': forms.Textarea(attrs={'rows': 4})
         }
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['avatar', 'bio', 'fecha_nacimiento']
+        widgets = {
+            'bio': forms.Textarea(attrs={'rows': 4})
+        }
+
+
+class UserEditForm(UserChangeForm):
+    password = None
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']

@@ -1,0 +1,16 @@
+<h2>Mi Perfil</h2>
+
+
+{%if perfil%}
+<p><strong>Bio:</strong> {{perfil.bio}} </p>
+{% if perfil.avatar %}
+<img src=" {{ perfil.avatar.url }} " alt="avatar" width="120">
+{%endif%}
+<a href="{%url 'editar_perfil' perfil.pk  %}">Editar Perfil</a>
+<a href="{%url 'eliminar_perfil' perfil.pk %}">Eliminar Perfil</a>
+<a href="{%url 'password_change' %}">Cambiar Contraseña</a>
+{%else%}
+<p>Aún no tenés Perfil creado.</p>
+<a href="{%url 'crear_perfil'  %}">Crear Perfil</a>
+{%endif%}
+<a href="{% url 'home' %}">Volver al Inicio</a>

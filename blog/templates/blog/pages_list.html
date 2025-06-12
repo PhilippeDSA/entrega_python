@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block title %} Lista De Páginas{% endblock %}
+{%block content%}
+<h1>Posts Disponibles</h1>
+
+{% for page in pages %}
+<h2> {{ page.titulo}} </h2>
+<p> {{page.contenido|truncatechars:150}} </p>
+<a href="{% url 'pages_detail' slug=page.slug %} ">Leer Más</a>
+<a href="{% url 'pages_delete' page.slug %}">Eliminar Post</a>
+{% empty %}
+<p>No Hay Posts</p>
+{% endfor %}
+
+
+{% endblock%}

@@ -1,35 +1,60 @@
-# Mi Proyecto Blog Django
+# Proyecto Final - Blog en Django
 
-Este proyecto es una aplicación web del tipo blog, desarrollada con Django que tiene lo siguiente:
+Este es mi proyecto final para el curso, una aplicación web de blog desarrollada con Django. Permite la creación y gestión de artículos, páginas, perfiles de usuario y mensajería interna.
 
-- Uso de herencia de plantillas HTML para evitar duplicación de código.(muy util la verdad jaja)
-- Tres modelos en la base de datos: `Autor`, `Categoria` y `Articulo`.
-- Formularios para crear registros en cada uno de estos modelos.
-- Formulario para buscar artículos en la base de datos.
-- Uso del patrón MVT (Modelo-Vista-Template) característico de Django.
+## 🚀 Características principales
 
----
+- Registro, inicio de sesión y cierre de sesión de usuarios
+- Creación, edición y eliminación de artículos
+- Buscador de artículos
+- Visualización y detalle de artículos
+- Creación y visualización de páginas personalizadas (CMS)
+- Gestión de perfiles con avatar, bio y fecha de nacimiento
+- Envío y recepción de mensajes entre usuarios
+- Editor enriquecido con CKEditor para contenido
+- Panel de administración de Django para gestión avanzada
+- Navegación intuitiva y diseño responsive
+- SEO básico y accesibilidad W3C
 
-## La Estructura del proyecto
+## 🛠️ Tecnologías utilizadas
 
-- `mi_proyecto/`: Carpeta raíz del proyecto Django.
-- `blog/`: Aplicación donde están definidos los modelos, vistas, urls y formularios.
-- `templates/`: Contiene las plantillas HTML.
-  - `base.html`: Es la plantilla base con estructura común.
-  - `crear_autor.html`, `crear_categoria.html`, `crear_articulo.html`: Son los formularios para crear datos.
-  - `buscar_articulo.html`: Es el formulario destinado para búsqueda.
-- `manage.py`: Es un script para manejar el proyecto (migraciones, servidor, etc.).
-- `db.sqlite3`: Es la Base de datos SQLite del proyecto.
+- Python 3.13.1
+- Django 5.2.1
+- SQLite (por defecto)
+- HTML5, CSS3, Bootstrap
+- CKEditor 5
+- Pillow (para manejo de imágenes)
+- Django Messages Framework
+## 📂 Estructura del proyecto
+mi_proyecto/
+│
+├── blog/ # Aplicación principal
+│ ├── templates/blog/ # Plantillas HTML
+│ ├── static/ # Archivos estáticos
+│ ├── models.py # Modelos de datos
+│ ├── views.py # Lógica de vistas
+│ ├── urls.py # Rutas internas
+│ ├── forms.py # Formularios
+│ └── signals.py # Señales para crear perfil automáticamente
+│
+├── mi_proyecto/ # Configuración del proyecto Django
+├── db.sqlite3 # Base de datos local
+└── manage.py # Utilidad de línea de comandos de Django
 
----
+## ✅ Cómo usar este proyecto
 
-## Requisitos previos para el correcto uso
-
-- Python 3.x instalado.
-- Django instalado (`pip install django`).
-- (Opcional) Entorno virtual para aislar dependencias.
-
----
-
-Fue un placer hacer este trabajo, hubo contratiempos pero supimos sobrellevarlos. 
-Saludos Cordiales.
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/PhilippeDSA/entrega-final-python.git
+   cd tu-repo
+2. **Crear entorno virtual e instalar dependencias:**
+python -m venv env
+source env/bin/activate  //Windows env\Scripts\activate
+pip install -r requirements.txt
+3. **Aplicar migraciones y crear superusuario:**
+python manage.py migrate
+python manage.py createsuperuser
+4. **Correr el servidor:**
+python manage.py runserver
+5. **Acceder al sitio:**
+Abre http://127.0.0.1:8000 en tu navegador.

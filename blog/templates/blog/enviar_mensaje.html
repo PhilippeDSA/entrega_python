@@ -2,7 +2,7 @@
 {% block title %} Enviar Mensaje {% endblock %}
 {% block content %}
 <h2>Enviar Mensaje</h2>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Enviar</button>

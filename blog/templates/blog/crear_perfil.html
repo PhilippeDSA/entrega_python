@@ -1,0 +1,9 @@
+<h2>Gestionar Perfil</h2>
+<ul>
+    {%if not request.user.perfil %}
+    <li><a href="{%url 'crear_perfil' %}">Crear Perfil</a></li>
+    {%else%}
+    <li><a href="{%url 'editar_perfil' pk=request.user.perfil.pk %}">Editar Perfil</a></li>
+    <li><a href="{%url 'eliminar_perfil' pk=request.user.perfil.pk %}">Eliminar Perfil</a></li>
+    {%endif%}
+</ul>

@@ -1,0 +1,7 @@
+<h2>¿Estas seguro de que queres eliminar tu perfil?</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Si, eliminar</button>
+</form>
+<a href="{%url 'mi_perfil' %}">Cancelar</a>

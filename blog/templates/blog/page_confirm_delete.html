@@ -1,0 +1,10 @@
+{%extends 'blog/base.html' %}
+{%block content%}
+<h2>¿Estas seguro que deseas borrar la página"{{object.titulo}}"?</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="{% url 'pages_list' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{%endblock%}
