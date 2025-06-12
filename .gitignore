@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entorno virtual
+venv/
+.env/
+.venv/
+
+# Archivos de entorno o configuración sensible
+*.env
+.env.*
+
+# Django
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# Archivos de migración vacíos o generados
+*.mo
+*.pot
+
+# VS Code
+.vscode/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Node (si usás para el frontend)
+node_modules/
